@@ -16,5 +16,3 @@ Segment.prototype.translate = function (dx, dy) {
   this.to.y += dy;
   return this;
 };
-
-module.exports = Segment.translate;

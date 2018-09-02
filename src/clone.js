@@ -7,7 +7,7 @@ const Segment = require('.');
  * @return {object} clone
  */
 Segment.prototype.clone = function () {
-  var clone = new Segment(this.from, this.to);
+  var clone = new Segment({ x: this.from.x, y: this.from.y }, { x: this.to.x, y: this.to.y });
   return clone;
 };
 

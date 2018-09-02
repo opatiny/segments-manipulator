@@ -13,9 +13,3 @@ Object.defineProperty(Segment.prototype, 'length', {
     return Math.sqrt(dx ** 2 + dy ** 2);
   }
 });
-
-
-let result1 = new Segment({ x: 0, y: 0 }, { x: 0, y: 2 });
-console.log(result1.length);
-
-module.exports = Segment.length;

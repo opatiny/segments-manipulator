@@ -1,5 +1,8 @@
 'use strict';
 
+
+Segment.getTangent([{ x: 0, y: 0 }]);
+
 var Segment = require('../src');
 
 var segment = new Segment({ x: 0, y: 0 }, { x: 5, y: 10 });
