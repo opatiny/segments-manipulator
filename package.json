@@ -37,5 +37,8 @@
     "eslint-plugin-jest": "^21.15.0",
     "jest": "^23.4.0",
     "npm-run-all": "^4.1.2"
+  },
+  "dependencies": {
+    "spectrum-generator": "^2.0.1"
   }
 }
