@@ -18,4 +18,4 @@ require('./length');
 require('./clone');
 require('./translate');
 
-Segment.getTangent = require('./getTangent');
+Segment.getTangent = require('./getTangent.js');
