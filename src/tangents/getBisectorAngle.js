@@ -2,14 +2,14 @@
 
 const Segment = require('..');
 
-/*
+/**
  * From three points, returns angle to tangent in degrees. Angle is a bisector of the crossing sides of triangle.
  * @param {object} [pointA] - First point of a triangle in the format {x: 3, y: 54}
  * @param {object} [pointB] - Point to which the tangent is desired in the format {x: 3, y: 54}
  * @param {object} [pointC] - Last point of a triangle in the format {x: 3, y: 54}
- * @return angle
+ * @return {number} angle
  */
-function bisectorAngle(pointA, pointB, pointC) {
+function getBisectorAngle(pointA, pointB, pointC) {
   let segmentA = new Segment(pointB, pointC);
   let segmentB = new Segment(pointA, pointC);
   let segmentC = new Segment(pointA, pointB);
@@ -25,4 +25,4 @@ function bisectorAngle(pointA, pointB, pointC) {
   return angle;
 }
 
-module.exports = bisectorAngle;
+module.exports = getBisectorAngle;

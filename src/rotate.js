@@ -17,9 +17,11 @@ Segment.prototype.rotate = function (angle, options = {}) {
   if (unit === 'degrees') {
     angle *= Math.PI / 180;
   }
+  /*
   console.log(angle);
   console.log(this.components.x);
   console.log(this.components.y);
+  */
 
   this.to.x = this.components.x * Math.cos(angle) - this.components.y * Math.sin(angle) + this.from.x;
   this.to.y = this.components.x * Math.sin(angle) + this.components.y * Math.cos(angle) + this.from.y;
