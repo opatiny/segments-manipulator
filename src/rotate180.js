@@ -16,8 +16,8 @@ Segment.prototype.rotate180 = function (options = {}) {
   var toy = this.to.y;
 
   if (around === 'from') {
-    this.to.x -= 2 * this.component.x;
-    this.to.y -= 2 * this.component.y;
+    this.to.x -= 2 * this.components.x;
+    this.to.y -= 2 * this.components.y;
   } else if (around === 'middle') {
     this.to.x = this.from.x;
     this.to.y = this.from.y;
