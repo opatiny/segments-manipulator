@@ -15,6 +15,7 @@ module.exports = Segment;
 
 require('./components');
 require('./unitComponents');
+require('./rotate');
 require('./rotate90');
 require('./rotate180');
 require('./length');
