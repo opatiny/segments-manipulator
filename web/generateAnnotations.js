@@ -1,7 +1,7 @@
 'use strict';
 
-var Segment = require('../src');
-var convertToAnnotations = require('../annotations/convertToAnnotations');
+const Segment = require('../src');
+const convertToAnnotations = require('../annotations/convertToAnnotations');
 
 var segments = [];
 

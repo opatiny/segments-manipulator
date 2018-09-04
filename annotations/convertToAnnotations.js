@@ -10,13 +10,15 @@ const fs = require('fs');
   * @param {string} [options.strokeWidth = '1px'] - Width of the segments
   * @param {string} [options.strokeType = 'line'] - Type of the segments
   * @param {string} [options.name = 'annotations.json'] - Name of the generated annotations file
+  * @param {string} [options.path = `${__dirname}/${name}`] - Name of the generated annotations file
   */
 function convertToAnnotations(segments, options = {}) {
   const {
     strokeColor = 'black',
     strokeWidth = '1px',
     strokeType = 'line',
-    name = 'annotations.json'
+    name = 'annotations.json',
+    path = `${__dirname}/${name}`
   } = options;
 
   var annotations = [];
@@ -37,7 +39,7 @@ function convertToAnnotations(segments, options = {}) {
     annotations.push(annotation);
 
     fs.writeFileSync(
-      `${__dirname}/${name}`,
+      path,
       JSON.stringify(annotations),
       'utf8'
     );
