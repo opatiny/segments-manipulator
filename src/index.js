@@ -14,8 +14,10 @@ function Segment(from, to) {
 module.exports = Segment;
 
 require('./rotate90');
+require('./rotate180');
 require('./length');
 require('./clone');
 require('./translate');
+require('./components');
 
-Segment.getTangent = require('./getTangent.js');
+Segment.getTangent = require('./tangents/getTangent');
