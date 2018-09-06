@@ -23,4 +23,4 @@ require('./clone');
 require('./translate');
 
 
-Segment.getTangent = require('./tangents/getTangent');
+Segment.getTangent = require('../tangents/getTangent');

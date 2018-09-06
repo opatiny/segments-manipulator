@@ -1,8 +1,9 @@
 'use strict';
 
-const Segment = require('..');
+const Segment = require('../basicAlgorithms');
 
 const getBisectorAngle = require('./getBisectorAngle');
+const getDotProductAngle = require('./getDotProductAngle');
 
 /**
  * From three points, returns tangent to the second point.
@@ -11,7 +12,7 @@ const getBisectorAngle = require('./getBisectorAngle');
  * @param {object} [pointC] - Last point in the format {x: 3, y: 54}
  * @param {object} [options]
  * @param {number} [options.segmentLength = 10] - Length of the segment
- * @param {string} [options.angleType = "bisector"] - Specify method to use to draw tangent
+ * @param {string} [options.angleType = "bisector"] - Specify method to use to draw tangent (bisector, dotProduct or proportional)
  * @return {object} tangent
  */
 function getTangent(pointA, pointB, pointC, options = {}) {
@@ -22,14 +23,16 @@ function getTangent(pointA, pointB, pointC, options = {}) {
 
   if (angleType === 'bisector') {
     var angle = getBisectorAngle(pointA, pointB, pointC);
+  } else if (angleType === 'dotProduct') {
+    angle = getDotProductAngle(pointA, pointB, pointC);
   }
 
   var segment = new Segment(pointB, pointC);
   segment.rotate(angle);
 
   var endPoint = {
-    x: pointB.x + segmentLength / 2 * segment.unitComponent.x,
-    y: pointB.y + segmentLength / 2 * segment.unitComponent.y
+    x: pointB.x + segmentLength / 2 * segment.unitComponents.x,
+    y: pointB.y + segmentLength / 2 * segment.unitComponents.y
   };
 
   var firstTangentHalf = new Segment(pointB, endPoint);

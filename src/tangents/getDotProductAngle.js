@@ -3,7 +3,7 @@
 const Segment = require('../basicAlgorithms');
 
 /**
- * From three points, returns angle to tangent in degrees. Angle is a bisector of the crossing sides of triangle.
+ * From three points, returns angle to tangent in degrees. Angle is calculated using dot product.
  * @param {object} [pointA] - First point of a triangle in the format {x: 3, y: 54}
  * @param {object} [pointB] - Point to which the tangent is desired in the format {x: 3, y: 54}
  * @param {object} [pointC] - Last point of a triangle in the format {x: 3, y: 54}
@@ -11,18 +11,16 @@ const Segment = require('../basicAlgorithms');
  * @param {string} [options.unit = "degrees"] - Unit of the angle (degrees or rad)
  * @return {number} angle
  */
-function getBisectorAngle(pointA, pointB, pointC, options = {}) {
+function getDotProductAngle(pointA, pointB, pointC, options = {}) {
   const { unit = 'degrees' } = options;
 
   let segmentA = new Segment(pointB, pointC);
-  let segmentB = new Segment(pointA, pointC);
   let segmentC = new Segment(pointA, pointB);
 
   let lengthA = segmentA.length;
-  let lengthB = segmentB.length;
   let lengthC = segmentC.length;
 
-  let beta = Math.acos((lengthA ** 2 - lengthB ** 2 + lengthC ** 2) / (2 * lengthC * lengthA));
+  let beta = Math.acos((segmentA.components.x * segmentC.components.x + segmentA.components.y * segmentC.components.y) / (lengthA * lengthC));
 
   if (unit === 'degrees') {
     beta *= 180 / Math.PI;
@@ -33,4 +31,4 @@ function getBisectorAngle(pointA, pointB, pointC, options = {}) {
   return angle;
 }
 
-module.exports = getBisectorAngle;
+module.exports = getDotProductAngle;
