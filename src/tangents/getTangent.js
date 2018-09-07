@@ -16,10 +16,7 @@ const getDotProductAngle = require('./getDotProductAngle');
  * @return {object} tangent
  */
 function getTangent(pointA, pointB, pointC, options = {}) {
-  const {
-    angleType = 'bisector',
-    segmentLength = 10
-  } = options;
+  const { angleType = 'bisector', segmentLength = 10 } = options;
 
   if (angleType === 'bisector') {
     var angle = getBisectorAngle(pointA, pointB, pointC);
@@ -31,8 +28,8 @@ function getTangent(pointA, pointB, pointC, options = {}) {
   segment.rotate(angle);
 
   var endPoint = {
-    x: pointB.x + segmentLength / 2 * segment.unitComponents.x,
-    y: pointB.y + segmentLength / 2 * segment.unitComponents.y
+    x: pointB.x + (segmentLength / 2) * segment.unitaryComponents.x,
+    y: pointB.y + (segmentLength / 2) * segment.unitaryComponents.y
   };
 
   var firstTangentHalf = new Segment(pointB, endPoint);

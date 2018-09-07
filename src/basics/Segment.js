@@ -1,6 +1,5 @@
 'use strict';
 
-
 /**
  * Creates new instance of segment
  * @param {object} [from] - Starting point of the segment in the format {x: 3, y: 54}
@@ -14,13 +13,12 @@ function Segment(from, to) {
 module.exports = Segment;
 
 require('./components');
-require('./unitComponents');
+require('./unitaryComponents');
 require('./rotate');
 require('./rotate90');
 require('./rotate180');
 require('./length');
 require('./clone');
 require('./translate');
-
 
 Segment.getTangent = require('../tangents/getTangent');

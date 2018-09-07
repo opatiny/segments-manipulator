@@ -1,6 +1,6 @@
 'use strict';
 
-const Segment = require('..');
+const Segment = require('../Segment');
 
 test('Segment.rotate', () => {
   let result = new Segment({ x: 0, y: 0 }, { x: 2, y: 2 });
@@ -25,4 +25,3 @@ test('Segment.rotate', () => {
   expect(segment3.to.x).toBeCloseTo(2.232);
   expect(segment3.to.y).toBeCloseTo(3.482);
 });
-

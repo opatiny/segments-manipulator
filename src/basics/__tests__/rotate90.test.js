@@ -1,6 +1,6 @@
 'use strict';
 
-const Segment = require('../index');
+const Segment = require('../Segment');
 
 test('Segment.rotate90', () => {
   let result1 = new Segment({ x: 0, y: 0 }, { x: 0, y: 2 });
@@ -17,5 +17,8 @@ test('Segment.rotate90', () => {
 
   let result4 = new Segment({ x: 1, y: 2 }, { x: 3, y: 3 });
   let segment4 = result4.rotate90({ around: 'middle' });
-  expect(segment4).toEqual({ from: { x: 2.5, y: 1.5 }, to: { x: 1.5, y: 3.5 } });
+  expect(segment4).toEqual({
+    from: { x: 2.5, y: 1.5 },
+    to: { x: 1.5, y: 3.5 }
+  });
 });

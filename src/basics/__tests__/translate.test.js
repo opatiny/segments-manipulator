@@ -1,6 +1,6 @@
 'use strict';
 
-const Segment = require('../index');
+const Segment = require('../Segment');
 
 test('Segment.translate', () => {
   let result1 = new Segment({ x: 0, y: 0 }, { x: 0, y: 2 });

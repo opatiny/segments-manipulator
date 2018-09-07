@@ -1,6 +1,6 @@
 'use strict';
 
-const Segment = require('..');
+const Segment = require('../Segment');
 
 test('Segment.components', () => {
   let segment1 = new Segment({ x: 0, y: 0 }, { x: 0, y: 2 });

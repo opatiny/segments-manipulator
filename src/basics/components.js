@@ -7,10 +7,10 @@ const Segment = require('.');
  * @return {object} components - In the format {x: 5, y: 9}
  */
 Object.defineProperty(Segment.prototype, 'components', {
-  get: function () {
-    let components = {};
-    components.x = this.to.x - this.from.x;
-    components.y = this.to.y - this.from.y;
-    return components;
+  get: function() {
+    return {
+      x: this.to.x - this.from.x,
+      y: this.to.y - this.from.y
+    };
   }
 });
