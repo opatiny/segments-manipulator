@@ -13,7 +13,7 @@ const generator = new SpectrumGenerator({
 generator.addPeak([5, 20]);
 generator.addPeak([30, 56]);
 generator.addPeaks([[40, 12], [10, 25]]);
-generator.addNoise(1);
+// generator.addNoise(1);
 generator.addBaseline((x) => x ** 2 / 1000);
 const spectrum = generator.getSpectrum();
 
